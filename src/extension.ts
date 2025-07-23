@@ -39,8 +39,15 @@ export function activate(context: vscode.ExtensionContext) {
                 }
             });
 
+            const saveDocumentSubscription = vscode.workspace.onDidSaveTextDocument(doc => {
+                if (doc.uri.toString() === document.uri.toString()) {
+                    panel.webview.postMessage({ command: 'saveComplete' });
+                }
+            });
+
             panel.onDidDispose(() => {
                 changeDocumentSubscription.dispose();
+                saveDocumentSubscription.dispose();
             });
 
             panel.webview.onDidReceiveMessage(message => {
@@ -70,12 +77,12 @@ function getWebviewContent(webview: vscode.Webview, context: vscode.ExtensionCon
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Titer Table Editor</title>
+        <title>acorgdb editor</title>
         <link rel="stylesheet" href="${styleUri}">
     </head>
     <body>
         <div class="container">
-            <h1>Titer Table Editor</h1>
+            <h1>acorgdb editor</h1>
             <div class="dropdowns">
                 <div>
                     <label for="resultSet">Result Set:</label>

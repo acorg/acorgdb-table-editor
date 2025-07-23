@@ -76,28 +76,28 @@ function renderTable() {
     const headerRow = document.createElement('tr');
     const th = document.createElement('th');
     headerRow.appendChild(th);
-    tableData.antigen_ids.forEach(antigenId => {
+    tableData.serum_ids.forEach(serumId => {
         const th = document.createElement('th');
-        th.textContent = antigenId;
+        th.textContent = serumId;
         headerRow.appendChild(th);
     });
     thead.appendChild(headerRow);
 
     // Data rows
-    tableData.serum_ids.forEach((serumId, rowIndex) => {
+    tableData.antigen_ids.forEach((antigenId, rowIndex) => {
         const row = document.createElement('tr');
         const th = document.createElement('th');
-        th.textContent = serumId;
+        th.textContent = antigenId;
         row.appendChild(th);
-        tableData.antigen_ids.forEach((_, colIndex) => {
+        tableData.serum_ids.forEach((_, colIndex) => {
             const cell = document.createElement('td');
             const input = document.createElement('input');
             input.type = 'text';
             input.dataset.rowIndex = rowIndex;
             input.dataset.colIndex = colIndex;
 
-            const currentValue = tableData.titers[colIndex][rowIndex];
-            const originalValue = originalTableData.titers[colIndex][rowIndex];
+            const currentValue = tableData.titers[rowIndex][colIndex];
+            const originalValue = originalTableData.titers[rowIndex][colIndex];
             input.value = currentValue;
 
             if (currentValue !== originalValue) {
@@ -106,7 +106,7 @@ function renderTable() {
 
             input.addEventListener('change', (e) => {
                 const newValue = e.target.value;
-                fullData[selectedResultSetIndex].results[selectedTiterTableIndex].titers[colIndex][rowIndex] = newValue;
+                fullData[selectedResultSetIndex].results[selectedTiterTableIndex].titers[rowIndex][colIndex] = newValue;
 
                 if (newValue !== originalValue) {
                     e.target.classList.add('changed');

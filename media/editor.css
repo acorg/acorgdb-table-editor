@@ -16,12 +16,15 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-th, td {
+td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 0;
     text-align: left;
 }
 th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
     background-color: #f2f2f2;
     position: sticky;
     top: 0;
@@ -38,8 +41,30 @@ tbody th {
 }
 input {
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    padding: 8px;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-align: left;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
+
+input:focus {
+    outline: 1px solid #007acc; /* VS Code's default focus color */
+    background-color: var(--vscode-input-background);
+}
+
+input:hover {
+    background-color: var(--vscode-input-background);
+}
+
 .changed {
     background-color: #90ee90; /* Light Green */
 }

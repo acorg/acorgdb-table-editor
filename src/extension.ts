@@ -55,7 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
                     case 'updateData':
                         isUpdatingFromWebview = true;
                         const edit = new vscode.WorkspaceEdit();
-                        edit.replace(document.uri, new vscode.Range(0, 0, document.lineCount, 0), JSON.stringify(message.data, null, 4));
+                        edit.replace(document.uri, new vscode.Range(0, 0, document.lineCount, 0), JSON.stringify(message.data, null, 4) + '\n');
                         vscode.workspace.applyEdit(edit).then(() => {
                             isUpdatingFromWebview = false;
                         });

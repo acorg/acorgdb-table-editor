@@ -88,11 +88,11 @@ function getWebviewContent(webview: vscode.Webview, context: vscode.ExtensionCon
             <h1>acorgdb editor</h1>
             <div class="dropdowns">
                 <div>
-                    <label for="resultSet">Result Set:</label>
+                    <label for="resultSet">Experiment:</label>
                     <select id="resultSet"></select>
                 </div>
                 <div>
-                    <label for="titerTable">Titer Table:</label>
+                    <label for="titerTable">Table:</label>
                     <select id="titerTable"></select>
                 </div>
             </div>

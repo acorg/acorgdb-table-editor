@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+}
+.container {
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+#tableContainer {
+    flex-grow: 1;
+    overflow: auto;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+}
+tbody th {
+    position: sticky;
+    left: 0;
+}
+.dropdowns {
+    margin-bottom: 20px;
+}
+.dropdowns div {
+    margin-bottom: 10px;
+}
+input {
+    width: 100%;
+    box-sizing: border-box;
+}
+.changed {
+    background-color: #f0f0f0; /* Light Grey */
+}

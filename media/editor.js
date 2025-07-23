@@ -149,12 +149,6 @@ function handleArrowKeys(e) {
         case 'ArrowDown':
             nextRow++;
             break;
-        // case 'ArrowLeft':
-        //     nextCol--;
-        //     break;
-        // case 'ArrowRight':
-        //     nextCol++;
-        //     break;
         default:
             return;
     }

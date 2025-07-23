@@ -30,17 +30,10 @@ window.addEventListener('message', event => {
 
             renderTable();
             break;
-    }
-});
-
-window.addEventListener('keydown', e => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-        e.preventDefault();
-        originalData = JSON.parse(JSON.stringify(fullData));
-        vscode.postMessage({
-            command: 'updateData',
-            data: fullData
-        });
+        case 'saveComplete':
+            originalData = JSON.parse(JSON.stringify(fullData));
+            renderTable();
+            break;
     }
 });
 
@@ -71,7 +64,7 @@ function populateTiterTableDropdown() {
 function renderTable() {
     const selectedResultSetIndex = resultSetDropdown.value;
     const selectedTiterTableIndex = titerTableDropdown.value;
-    if (!fullData) return;
+    if (!fullData || !originalData) return;
     const tableData = fullData[selectedResultSetIndex].results[selectedTiterTableIndex];
     const originalTableData = originalData[selectedResultSetIndex].results[selectedTiterTableIndex];
 
@@ -114,6 +107,13 @@ function renderTable() {
             input.addEventListener('change', (e) => {
                 const newValue = e.target.value;
                 fullData[selectedResultSetIndex].results[selectedTiterTableIndex].titers[colIndex][rowIndex] = newValue;
+
+                if (newValue !== originalValue) {
+                    e.target.classList.add('changed');
+                } else {
+                    e.target.classList.remove('changed');
+                }
+
                 vscode.postMessage({
                     command: 'updateData',
                     data: fullData

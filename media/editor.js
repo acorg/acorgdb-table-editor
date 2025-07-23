@@ -17,7 +17,7 @@ window.addEventListener('message', event => {
             if (!originalData) {
                 originalData = JSON.parse(JSON.stringify(message.data));
             }
-            
+
             populateResultSetDropdown(fullData);
 
             if (selectedResultSet) {
@@ -27,7 +27,7 @@ window.addEventListener('message', event => {
                 populateTiterTableDropdown();
                 titerTableDropdown.value = selectedTiterTable;
             }
-            
+
             renderTable();
             break;
     }
@@ -82,7 +82,6 @@ function renderTable() {
     // Header row
     const headerRow = document.createElement('tr');
     const th = document.createElement('th');
-    th.textContent = 'Serum ID';
     headerRow.appendChild(th);
     tableData.antigen_ids.forEach(antigenId => {
         const th = document.createElement('th');
@@ -103,7 +102,7 @@ function renderTable() {
             input.type = 'text';
             input.dataset.rowIndex = rowIndex;
             input.dataset.colIndex = colIndex;
-            
+
             const currentValue = tableData.titers[colIndex][rowIndex];
             const originalValue = originalTableData.titers[colIndex][rowIndex];
             input.value = currentValue;

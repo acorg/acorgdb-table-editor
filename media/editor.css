@@ -25,9 +25,10 @@ th {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    background-color: #f2f2f2;
+    background-color: #444444;
     position: sticky;
     top: 0;
+    color:white;
 }
 tbody th {
     position: sticky;
@@ -67,4 +68,12 @@ input:hover {
 
 .changed {
     background-color: #90ee90; /* Light Green */
+}
+
+.highlight-row > td {
+    background-color: #f0f0f0; /* Light Grey */
+}
+
+.highlight-col {
+    background-color: #f0f0f0; /* Light Grey */
 }

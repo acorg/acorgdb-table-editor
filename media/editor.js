@@ -122,6 +122,16 @@ function renderTable() {
 
             input.addEventListener('keydown', handleArrowKeys);
 
+            input.addEventListener('focus', (e) => {
+                const { rowIndex, colIndex } = e.target.dataset;
+                highlightRowAndColumn(rowIndex, colIndex, true);
+            });
+
+            input.addEventListener('blur', (e) => {
+                const { rowIndex, colIndex } = e.target.dataset;
+                highlightRowAndColumn(rowIndex, colIndex, false);
+            });
+
             cell.appendChild(input);
             row.appendChild(cell);
         });
@@ -133,6 +143,33 @@ function renderTable() {
 
     tableContainer.innerHTML = '';
     tableContainer.appendChild(table);
+}
+
+function highlightRowAndColumn(rowIndex, colIndex, highlight) {
+    const table = tableContainer.querySelector('table');
+    if (!table) return;
+
+    // Highlight row
+    const row = table.rows[parseInt(rowIndex, 10) + 1]; // +1 to account for header row
+    if (row) {
+        if (highlight) {
+            row.classList.add('highlight-row');
+        } else {
+            row.classList.remove('highlight-row');
+        }
+    }
+
+    // Highlight column, skipping the header row
+    for (let i = 1; i < table.rows.length; i++) {
+        const cell = table.rows[i].cells[parseInt(colIndex, 10) + 1]; // +1 to account for row header
+        if (cell) {
+            if (highlight) {
+                cell.classList.add('highlight-col');
+            } else {
+                cell.classList.remove('highlight-col');
+            }
+        }
+    }
 }
 
 function handleArrowKeys(e) {

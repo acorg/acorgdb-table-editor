@@ -17,7 +17,7 @@
     "commands": [
       {
         "command": "acorgdb-table-editor.editAsTiterTable",
-        "title": "Edit Titer Table",
+        "title": "acorgdb: Edit Titer Table",
         "when": "editorLangId == json"
       }
     ]

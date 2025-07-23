@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
             const panel = vscode.window.createWebviewPanel(
                 'titerTableEditor',
                 'Titer Table Editor',
-                vscode.ViewColumn.One,
+                vscode.ViewColumn.Beside,
                 {
                     enableScripts: true,
                     retainContextWhenHidden: true
@@ -59,6 +59,9 @@ export function activate(context: vscode.ExtensionContext) {
                         vscode.workspace.applyEdit(edit).then(() => {
                             isUpdatingFromWebview = false;
                         });
+                        return;
+                    case 'saveData':
+                        editor.document.save();
                         return;
                 }
             }, undefined, context.subscriptions);

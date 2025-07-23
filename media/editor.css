@@ -48,8 +48,8 @@ input {
     background-color: transparent;
     padding: 8px;
     margin: 0;
-    font-family: inherit;
-    font-size: inherit;
+    font-family: var(--vscode-editor-font-family, monospace);
+    font-size: var(--vscode-editor-font-size, 1em);
     color: inherit;
     text-align: left;
     -webkit-appearance: none;

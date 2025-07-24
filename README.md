@@ -2,6 +2,8 @@
 
 A VSCode extension for editing acorgdb JSON files in a tabular format.
 
+https://github.com/user-attachments/assets/37330937-fdc5-4409-8840-f0f597b7c4b6
+
 ## Usage
 
 1. Open a `.json` file conforming to the ACORG_DB schema.

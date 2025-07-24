@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
             const document = editor.document;
             const panel = vscode.window.createWebviewPanel(
                 'titerTableEditor',
-                'Titer Table Editor',
+                'acorgdb editor',
                 vscode.ViewColumn.Beside,
                 {
                     enableScripts: true,
@@ -85,14 +85,13 @@ function getWebviewContent(webview: vscode.Webview, context: vscode.ExtensionCon
     </head>
     <body>
         <div class="container">
-            <h1>acorgdb editor</h1>
             <div class="dropdowns">
                 <div>
-                    <label for="resultSet">Experiment:</label>
+                    <h3><label for="resultSet">Experiment</label></h3>
                     <select id="resultSet"></select>
                 </div>
                 <div>
-                    <label for="titerTable">Table:</label>
+                    <h3><label for="titerTable">Table</label></h3>
                     <select id="titerTable"></select>
                 </div>
             </div>

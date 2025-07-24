@@ -2,8 +2,12 @@
   "name": "acorgdb-table-editor",
   "displayName": "acorgdb-table-editor",
   "description": "An editor for working on square tables in acorgdb JSON files.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acorg/acorgdb-table-editor.git"
+  },
   "publisher": "David Pattinson",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.102.0"
   },

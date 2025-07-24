@@ -6,7 +6,7 @@ https://github.com/user-attachments/assets/37330937-fdc5-4409-8840-f0f597b7c4b6
 
 ## Installation
 
-1. Download the latest `.vsix` from the releases page.
+1. Download the latest `.vsix` from the [releases page](https://github.com/acorg/acorgdb-table-editor/releases/latest).
 2. In vscode open the extensions sidebar.
 3. Click the three dots icon at top of the sidebar and click `Install from VSIX`.
 

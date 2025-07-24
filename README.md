@@ -4,6 +4,9 @@ A VSCode extension for editing acorgdb JSON files in a tabular format.
 
 https://github.com/user-attachments/assets/37330937-fdc5-4409-8840-f0f597b7c4b6
 
+> [!WARNING]
+> This was 99% coded using [gemini-cli](https://github.com/google-gemini/gemini-cli). It did all the heavy lifting on the actual functionality, I just fiddled with a bit of the formatting and colours.
+
 ## Installation
 
 1. Download the latest `.vsix` from the [releases page](https://github.com/acorg/acorgdb-table-editor/releases/latest).
@@ -24,3 +27,4 @@ https://github.com/user-attachments/assets/37330937-fdc5-4409-8840-f0f597b7c4b6
     - Use the `Up Arrow` and `Down Arrow` keys to move between rows in the same column.
     - Use `Tab` and `Shift+Tab` to navigate between cells horizontally.
 - **Row/Column Highlighting**: The current row and column are highlighted in light grey for better visibility.
+
